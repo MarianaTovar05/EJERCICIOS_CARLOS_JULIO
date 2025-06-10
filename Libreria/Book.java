@@ -6,6 +6,7 @@ public class Book {
     public String author;
     public String genre;
     public LocalDate publicationDate;
+
     public Book(String ISBN, String title, String author, String genre, LocalDate publicationDate) {
         this.ISBN = ISBN;
         this.title = title;
@@ -13,23 +14,29 @@ public class Book {
         this.genre = genre;
         this.publicationDate = publicationDate;
     }
+
     public String getISBN() {
         return ISBN;
     }
+
     public String getTitle() {
         return title;
     }
+
     public String getAuthor() {
         return author;
     }
+
     public String getGenre() {
         return genre;
     }
+
     public LocalDate getPublicationDate() {
         return publicationDate;
     }
+
+    @Override
     public String toString() {
         return "Libro: " + title + " | Autor: " + author + " | ISBN: " + ISBN;
     }
 }
-
