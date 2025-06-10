@@ -33,7 +33,7 @@ public class Biblioteca{
         } while (option != 0);
     }
 
-    private static void registrarLibro() {
+    public static void registrarLibro() {
         System.out.print("ISBN: ");
         String isbn = teclado.nextLine();
         for (Book b : books) {
@@ -56,7 +56,7 @@ public class Biblioteca{
         System.out.println("Se registró el libro con éxito.");
     }
 
-    private static void filtrarLibros() {
+    public static void filtrarLibros() {
         System.out.print("Buscar por título, autor o ISBN: ");
         String search = teclado.nextLine().toLowerCase();
         books.stream()
@@ -66,7 +66,7 @@ public class Biblioteca{
                 .forEach(System.out::println);
     }
 
-    private static void registrarLector() {
+    public static void registrarLector() {
         System.out.print("Nombre: ");
         String name = teclado.nextLine();
         System.out.print("Carnet: ");
@@ -84,7 +84,7 @@ public class Biblioteca{
         System.out.println("Se ha registrado con éxito el lector.");
     }
 
-    private static void filtrarLectores() {
+    public static void filtrarLectores() {
         System.out.print("Buscar por nombre, carnet o correo: ");
         String search = teclado.nextLine().toLowerCase();
         readers.stream()
@@ -94,7 +94,7 @@ public class Biblioteca{
                 .forEach(System.out::println);
     }
 
-    private static void registrarPrestamo() {
+    public static void registrarPrestamo() {
         System.out.print("ISBN del libro: ");
         String isbn = teclado.nextLine();
         Book book = books.stream().filter(b -> b.getISBN().equalsIgnoreCase(isbn)).findFirst().orElse(null);
@@ -120,7 +120,7 @@ public class Biblioteca{
         System.out.println("Préstamo registrado con éxito.");
     }
 
-    private static void filtrarPrestamos() {
+    public static void filtrarPrestamos() {
         System.out.print("Buscar por título, carnet o fecha (AAAA-MM-DD): ");
         String search = teclado.nextLine().toLowerCase();
         loans.stream()
@@ -131,7 +131,7 @@ public class Biblioteca{
                 .forEach(System.out::println);
     }
 
-    private static void registrarDevolucion() {
+    public static void registrarDevolucion() {
         System.out.print("ISBN del libro a devolver: ");
         String isbn = teclado.nextLine();
         Optional<Loan> loan = loans.stream()
